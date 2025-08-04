@@ -27,8 +27,12 @@ while allow == False:
         case 2:
             print(students)
         case 3:
+            cont = 1
             Sorted = Q_S(students)
-            print(Sorted)
+            for i in range(len(Sorted)):
+                print(f"Estudiante {cont}: ")
+                print(Sorted[i])
+                cont = cont + 1
         case 4:
             print("Gracias por utilizar el programa")
             break
