@@ -1,9 +1,25 @@
+def Q_S(Students):
+    if len(Students) <= 1:
+        return Students
+    else:
+        Lower = {}
+        Upper = {}
+        Same = {}
+        for code, value in Students.items():
+            Check = value["name"]
+            break
+        for code, value in Students.items():
+            Lower = {x for x in Students if value["name"] < Check}
+            Same = {x for x in Students if value["name"] == Check}
+            Upper = {x for x in Students if value["name"] > Check}
+        return Q_S(Lower) + Same + Q_S(Upper)
 def Menu():
     print("---Menu---")
     print("1.Registrar estudiantes")
     print("2.Mostrar todos los estudiantes y sus cursos")
     print("3.Buscar estudiante por carnet")
-    print("4.Salir")
+    print("4.Ordenar estudiantes por carnet")
+    print("5.Salir")
 students = {}
 allow = False
 allow1 = False
@@ -91,6 +107,9 @@ try:
                     else:
                         print("El estudiante no existe")
             case 4:
+                Sorted = Q_S(students)
+                print(Sorted)
+            case 5:
                 print("Gracias por utilizar el programa")
                 break
             case _:
