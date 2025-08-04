@@ -22,12 +22,13 @@ while allow == False:
         case 1:
             number = int(input("Ingrese la cantidad de alumnos que desea ingresar: "))
             for i in range(number):
-                name = input("Ingrese el nombre del alumno")
+                name = input("Ingrese el nombre del alumno: ")
                 students.append(name)
         case 2:
             print(students)
         case 3:
-            print("Mostrar")
+            Sorted = Q_S(students)
+            print(Sorted)
         case 4:
             print("Gracias por utilizar el programa")
             break
