@@ -8,7 +8,11 @@ def Q_S(Students):
     if len(Students) <= 1:
         return Students
     else:
-
+        check = Students[0]
+        Lower = [x for x in Students if x < check]
+        Same = [x for x in Students if x == check]
+        Upper = [x for x in Students if x > check]
+        return Q_S(Lower) + Same + Q_S(Upper)
 allow = False
 students = []
 while allow == False:
